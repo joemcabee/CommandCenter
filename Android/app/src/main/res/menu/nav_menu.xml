@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_system_overview"
+            android:title="@string/system_overview" />
+    </group>
+    <item android:title="@string/garage">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_garage_doors"
+                    android:title="@string/doors" />
+                <item
+                    android:id="@+id/nav_garage_webcam"
+                    android:title="@string/webcam" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/robot">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_robot_webcam"
+                    android:title="@string/webcam" />
+            </group>
+        </menu>
+    </item>
+</menu>

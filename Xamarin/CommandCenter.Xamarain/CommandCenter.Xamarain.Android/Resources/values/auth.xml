@@ -1,0 +1,4 @@
+<resources>
+  <string name="basic_auth_hash">Basic cm9ndWVvbmU6ZGVhdGhzdGFy</string>
+  <string name="auth_hash">cm9ndWVvbmU6ZGVhdGhzdGFy</string>
+</resources>

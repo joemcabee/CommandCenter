@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Command Center</string>
+    <string-array name="drawer_items">
+        <item>System Overview</item>
+        <item>Garage</item>
+        <item>Garage Webcam</item>
+        <item>Robot Webcam</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="home">Home</string>
+    <string name="garage">Garage</string>
+    <string name="robot">Robot</string>
+    <string name="trigger">Trigger</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="system_overview">System Overview</string>
+    <string name="doors">Doors</string>
+    <string name="webcam">Webcam</string>
+    <string name="refresh">Refresh</string>
+</resources>

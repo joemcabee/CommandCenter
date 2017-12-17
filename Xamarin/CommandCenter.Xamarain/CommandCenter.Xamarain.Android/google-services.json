@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "920731570347",
+    "firebase_url": "https://command-center-fedce.firebaseio.com",
+    "project_id": "command-center-fedce",
+    "storage_bucket": "command-center-fedce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920731570347:android:3a97a34025072280",
+        "android_client_info": {
+          "package_name": "com.pop.commandcenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920731570347-b60umqjbq05pvj59lpu3tsiji0unruep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8hRIdauZYYTLP1m1n74XpGWm-STN-1YA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
