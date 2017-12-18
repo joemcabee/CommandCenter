@@ -49,7 +49,8 @@ namespace CommandCenter.Xamarain.Droid
                     Type = "Raspberry Pi 3",
                     Status = "checking status...",
                     Service = Services.CommandCenterPing,
-                    Position = 0
+                    Position = 0,
+                    IpAddress = "192.168.0.200"
                 };
 
                 items.Add(cc);
@@ -60,7 +61,8 @@ namespace CommandCenter.Xamarain.Droid
                     Type = "Raspberry Pi",
                     Status = "checking status...",
                     Service = Services.GaragePing,
-                    Position = 1
+                    Position = 1,
+                    IpAddress = "192.168.0.201"
                 };
 
                 items.Add(garage);
@@ -71,7 +73,8 @@ namespace CommandCenter.Xamarain.Droid
                     Type = "Raspberry Pi 3",
                     Status = "checking status...",
                     Service = Services.RobotPing,
-                    Position = 2
+                    Position = 2,
+                    IpAddress = "192.168.0.202"
                 };
 
                 items.Add(robot);
@@ -82,7 +85,8 @@ namespace CommandCenter.Xamarain.Droid
                     Type = "Raspberry Pi Zero-W",
                     Status = "checking status...",
                     Service = Services.SensorPing,
-                    Position = 3
+                    Position = 3,
+                    IpAddress = "192.168.0.203"
                 };
 
                 items.Add(sensor);
@@ -93,7 +97,8 @@ namespace CommandCenter.Xamarain.Droid
                     Type = "Raspberry Pi Zero-W",
                     Status = "checking status...",
                     Service = Services.EnviroPing,
-                    Position = 4
+                    Position = 4,
+                    IpAddress = "192.168.0.204"
                 };
 
                 items.Add(enviro);

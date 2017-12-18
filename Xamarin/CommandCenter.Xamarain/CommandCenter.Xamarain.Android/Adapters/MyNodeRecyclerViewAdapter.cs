@@ -36,6 +36,7 @@ namespace CommandCenter.Xamarain.Droid.Adapters
             MyNodeViewHolder vh = holder as MyNodeViewHolder;
             vh.mNameView.Text = mValues[position].Name;
             vh.mTypeView.Text = mValues[position].Type;
+            vh.mAddressView.Text = mValues[position].IpAddress;
 
             var status = mValues[position].Status;
             vh.mStatusView.Text = status;
@@ -74,6 +75,7 @@ namespace CommandCenter.Xamarain.Droid.Adapters
         public View mView;
         public TextView mNameView;
         public TextView mTypeView;
+        public TextView mAddressView;
         public TextView mStatusView;
         public ImageView mImageView;
         public Node mItem;
@@ -83,6 +85,7 @@ namespace CommandCenter.Xamarain.Droid.Adapters
             mView = view;
             mNameView = view.FindViewById<TextView>(Resource.Id.node_name);
             mTypeView = view.FindViewById<TextView>(Resource.Id.node_type);
+            mAddressView = view.FindViewById<TextView>(Resource.Id.node_address);
             mStatusView = view.FindViewById<TextView>(Resource.Id.node_status);
             mImageView = view.FindViewById<ImageView>(Resource.Id.node_status_icon);
         }

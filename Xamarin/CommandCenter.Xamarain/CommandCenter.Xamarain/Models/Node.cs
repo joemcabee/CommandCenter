@@ -9,5 +9,6 @@ namespace CommandCenter.Xamarain.Models
         public string Status { get; set; }
         public string Service { get; set; }
         public int Position { get; set; }
+        public string IpAddress { get; set; }
     }
 }
