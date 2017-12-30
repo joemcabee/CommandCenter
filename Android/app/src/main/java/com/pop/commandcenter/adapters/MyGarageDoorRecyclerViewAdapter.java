@@ -1,8 +1,7 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.adapters;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +11,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pop.commandcenter.clients.ApiClient;
+import com.pop.commandcenter.R;
+import com.pop.commandcenter.constants.RemoteUrls;
 import com.pop.commandcenter.models.GarageDoor;
 import com.pop.commandcenter.models.ServiceRequest;
 import com.pop.commandcenter.models.ServiceResponse;
@@ -96,7 +98,7 @@ public class MyGarageDoorRecyclerViewAdapter extends RecyclerView.Adapter<MyGara
 
         protected Void doInBackground(GarageDoor... doors) {
             ServiceRequest request = new ServiceRequest();
-            request.setUrl(Urls.CommandCenter);
+            request.setUrl(RemoteUrls.CommandCenter);
             request.setService(doors[0].getService());
 
             ApiClient client = new ApiClient();

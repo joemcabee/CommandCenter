@@ -1,11 +1,5 @@
 <resources>
     <string name="app_name">Command Center</string>
-    <string-array name="drawer_items">
-        <item>System Overview</item>
-        <item>Garage</item>
-        <item>Garage Webcam</item>
-        <item>Robot Webcam</item>
-    </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_websearch">Web search</string>
@@ -20,4 +14,10 @@
     <string name="doors">Doors</string>
     <string name="webcam">Webcam</string>
     <string name="refresh">Refresh</string>
+    <string name="sensors">Sensors</string>
+    <string name="guest_room">Guest Room</string>
+    <string name="phat_sensors">Enviro pHAT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

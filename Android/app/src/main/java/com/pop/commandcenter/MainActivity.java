@@ -14,6 +14,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.pop.commandcenter.constants.RemoteUrls;
+import com.pop.commandcenter.fragments.EnviroFragment;
+import com.pop.commandcenter.fragments.GarageDoorFragment;
+import com.pop.commandcenter.fragments.NodeFragment;
+import com.pop.commandcenter.fragments.SensorFragment;
+import com.pop.commandcenter.fragments.WebViewFragment;
+
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavView;
@@ -173,10 +180,16 @@ public class MainActivity extends AppCompatActivity {
                     fragment = GarageDoorFragment.newInstance(1);
                     break;
                 case (R.id.nav_garage_webcam):
-                    fragment = WebViewFragment.newInstance(Urls.GarageWebcam);
+                    fragment = WebViewFragment.newInstance(RemoteUrls.GarageWebcam);
+                    break;
+                case (R.id.nav_guest_room_phat_sensors):
+                    fragment = EnviroFragment.newInstance(1);
+                    break;
+                case (R.id.nav_guest_room_sensors):
+                    fragment = SensorFragment.newInstance(1);
                     break;
                 case (R.id.nav_robot_webcam):
-                    fragment = WebViewFragment.newInstance(Urls.RobotWebcam);
+                    fragment = WebViewFragment.newInstance(RemoteUrls.RobotWebcam);
                     break;
             }
 

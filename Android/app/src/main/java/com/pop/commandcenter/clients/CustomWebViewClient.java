@@ -1,4 +1,4 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.clients;
 
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;

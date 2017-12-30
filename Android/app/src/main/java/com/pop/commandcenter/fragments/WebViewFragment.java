@@ -1,13 +1,15 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+
+import com.pop.commandcenter.clients.CustomWebViewClient;
+import com.pop.commandcenter.R;
+import com.pop.commandcenter.constants.RemoteAuth;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,7 +62,7 @@ public class WebViewFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
 
-        String authValue = Authorization.getBasicAuthValue(container.getContext());
+        String authValue = RemoteAuth.getBasicAuthValue(container.getContext());
         Map<String, String> map = new HashMap<String, String>();
         map.put("Authorization", authValue);
 

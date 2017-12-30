@@ -1,4 +1,4 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.fragments;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -7,16 +7,25 @@ import android.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pop.commandcenter.clients.ApiClient;
+import com.pop.commandcenter.R;
+import com.pop.commandcenter.adapters.MyNodeRecyclerViewAdapter;
+import com.pop.commandcenter.constants.MachineTypes;
+import com.pop.commandcenter.constants.RemoteServices;
+import com.pop.commandcenter.constants.RemoteUrls;
 import com.pop.commandcenter.models.Node;
 import com.pop.commandcenter.models.ServiceRequest;
 import com.pop.commandcenter.models.ServiceResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.crypto.Mac;
 
 /**
  * A fragment representing a list of Items.
@@ -74,34 +83,57 @@ public class NodeFragment extends Fragment {
 
             Node cc = new Node();
             cc.setName("pi-cc");
-            cc.setType("Raspberry Pi 3");
+            cc.setType(MachineTypes.RaspberryPi3);
             cc.setStatus("checking status...");
-            cc.setService(Services.CommandCenterPing);
+            cc.setService(RemoteServices.CommandCenterPing);
+            cc.setIpAddress("192.168.0.200");
             cc.setPosition(0);
 
             items.add(cc);
 
             Node garage = new Node();
             garage.setName("pi-garage");
-            garage.setType("Raspberry Pi");
+            garage.setType(MachineTypes.RaspberryPi);
             garage.setStatus("checking status...");
-            garage.setService(Services.GaragePing);
+            garage.setService(RemoteServices.GaragePing);
+            garage.setIpAddress("192.168.0.201");
             garage.setPosition(1);
 
             items.add(garage);
 
             Node robot = new Node();
             robot.setName("pi-robot");
-            robot.setType("Raspberry Pi 3");
+            robot.setType(MachineTypes.RaspberryPi3);
             robot.setStatus("checking status...");
-            robot.setService(Services.RobotPing);
+            robot.setService(RemoteServices.RobotPing);
+            robot.setIpAddress("192.168.0.202");
             robot.setPosition(2);
 
             items.add(robot);
 
+            Node sensor = new Node();
+            sensor.setName("pi-sensor");
+            sensor.setType(MachineTypes.RaspberryPiZeroW);
+            sensor.setStatus("checking status...");
+            sensor.setService(RemoteServices.SensorPing);
+            sensor.setIpAddress("192.168.0.203");
+            sensor.setPosition(3);
+
+            items.add(sensor);
+
+            Node enviro = new Node();
+            enviro.setName("pi-enviro");
+            enviro.setType(MachineTypes.RaspberryPiZeroW);
+            enviro.setStatus("checking status...");
+            enviro.setService(RemoteServices.EnviroPing);
+            enviro.setIpAddress("192.168.0.204");
+            enviro.setPosition(4);
+
+            items.add(enviro);
+
             recyclerView.setAdapter(new MyNodeRecyclerViewAdapter(context, items));
 
-            new CheckStatusTask(getContext(), recyclerView).execute(cc, garage, robot);
+            new CheckStatusTask(getContext(), recyclerView).execute(cc, garage, robot, sensor, enviro);
         }
 
         return view;
@@ -119,15 +151,21 @@ public class NodeFragment extends Fragment {
         protected Void doInBackground(Node... nodes) {
             for (int i = 0; i < nodes.length; i++) {
                 ServiceRequest request = new ServiceRequest();
-                request.setUrl(Urls.CommandCenter);
+                request.setUrl(RemoteUrls.CommandCenter);
                 request.setService(nodes[i].getService());
 
-                ApiClient client = new ApiClient();
-                ServiceResponse response = client.httpGet(getContext(), request);
                 String nodeStatus = "Offline";
 
-                if (response.getSuccess()){
-                    nodeStatus = "Online";
+                try{
+                    ApiClient client = new ApiClient();
+                    ServiceResponse response = client.httpGet(getContext(), request);
+
+                    if (response.getSuccess()){
+                        nodeStatus = "Online";
+                    }
+                }
+                catch (Exception ex){
+                    Log.e("NodeFragment", ex.getMessage());
                 }
 
                 nodes[i].setStatus(nodeStatus);

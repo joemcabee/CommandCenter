@@ -1,4 +1,4 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pop.commandcenter.R;
 import com.pop.commandcenter.models.Node;
 
 import java.util.List;
@@ -42,6 +43,7 @@ public class MyNodeRecyclerViewAdapter extends RecyclerView.Adapter<MyNodeRecycl
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mNameView.setText(mValues.get(position).getName());
         holder.mTypeView.setText(mValues.get(position).getType());
+        holder.mAddressView.setText(mValues.get(position).getIpAddress());
 
         String status = mValues.get(position).getStatus();
         holder.mStatusView.setText(status);
@@ -61,7 +63,6 @@ public class MyNodeRecyclerViewAdapter extends RecyclerView.Adapter<MyNodeRecycl
     public void updateStatus(int position, String status) {
         mValues.get(position).setStatus(status);
         notifyItemChanged(position);
-
     }
 
     @Override
@@ -74,6 +75,7 @@ public class MyNodeRecyclerViewAdapter extends RecyclerView.Adapter<MyNodeRecycl
         public final TextView mNameView;
         public final TextView mTypeView;
         public final TextView mStatusView;
+        public final TextView mAddressView;
         public final ImageView mImageView;
         public Node mItem;
 
@@ -82,6 +84,7 @@ public class MyNodeRecyclerViewAdapter extends RecyclerView.Adapter<MyNodeRecycl
             mView = view;
             mNameView = (TextView) view.findViewById(R.id.node_name);
             mTypeView = (TextView) view.findViewById(R.id.node_type);
+            mAddressView = (TextView) view.findViewById(R.id.node_address);
             mStatusView = (TextView) view.findViewById(R.id.node_status);
             mImageView = (ImageView) view.findViewById(R.id.node_status_icon);
         }

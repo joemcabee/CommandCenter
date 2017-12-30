@@ -1,4 +1,4 @@
-package com.pop.commandcenter;
+package com.pop.commandcenter.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pop.commandcenter.adapters.MyGarageDoorRecyclerViewAdapter;
+import com.pop.commandcenter.R;
+import com.pop.commandcenter.constants.RemoteServices;
 import com.pop.commandcenter.models.GarageDoor;
 
 import java.util.ArrayList;
@@ -72,14 +75,14 @@ public class GarageDoorFragment extends Fragment {
             GarageDoor leftDoor = new GarageDoor();
             leftDoor.setDoorSide("Left");
             leftDoor.setCar("Pilot");
-            leftDoor.setService(Services.LeftGarageDoor);
+            leftDoor.setService(RemoteServices.LeftGarageDoor);
 
             garageDoors.add(leftDoor);
 
             GarageDoor rightDoor = new GarageDoor();
             rightDoor.setDoorSide("Right");
             rightDoor.setCar("Outlander");
-            rightDoor.setService(Services.RightGarageDoor);
+            rightDoor.setService(RemoteServices.RightGarageDoor);
 
             garageDoors.add(rightDoor);
 

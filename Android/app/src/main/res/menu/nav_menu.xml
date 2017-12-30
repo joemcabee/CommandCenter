@@ -17,6 +17,18 @@
             </group>
         </menu>
     </item>
+    <item android:title="@string/guest_room">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_guest_room_phat_sensors"
+                    android:title="@string/phat_sensors" />
+                <item
+                    android:id="@+id/nav_guest_room_sensors"
+                    android:title="@string/sensors" />
+            </group>
+        </menu>
+    </item>
     <item android:title="@string/robot">
         <menu>
             <group android:checkableBehavior="single">

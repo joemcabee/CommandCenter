@@ -45,9 +45,18 @@ public class Node {
         Position = position;
     }
 
+    public String getIpAddress() {
+        return IpAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        IpAddress = ipAddress;
+    }
+
     String Name;
     String Type;
     String Status;
     String Service;
+    String IpAddress;
     int Position;
 }
