@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CommandCenter.Xamarain
+﻿namespace CommandCenter.Xamarain
 {
     public class Authorization
     {
@@ -20,7 +14,7 @@ namespace CommandCenter.Xamarain
         public static string RobotWebcam = "https://command-center.ddns.net/pirobot/webcam/stream.jpg";
     }
 
-    public class Services
+    public class RemoteServices
     {
         public static string CommandCenterPing = "ping";
         public static string GaragePing = "proxy/GaragePing";

@@ -43,7 +43,7 @@ namespace CommandCenter.Xamarain.Droid
                     Location = "Guest Room",
                     Type = "Temperature",
                     Value = "getting value...",
-                    Service = CommandCenter.Xamarain.Services.Temp,
+                    Service = RemoteServices.Temp,
                     Position = 0
                 };
 
@@ -54,7 +54,7 @@ namespace CommandCenter.Xamarain.Droid
                     Location = "Guest Room",
                     Type = "Light",
                     Value = "getting value...",
-                    Service = CommandCenter.Xamarain.Services.Light,
+                    Service = RemoteServices.Light,
                     Position = 1
                 };
 
@@ -87,7 +87,7 @@ namespace CommandCenter.Xamarain.Droid
                 if (response.Success)
                 {
 
-                    if (Sensor.Service == Services.Temp)
+                    if (Sensor.Service == RemoteServices.Temp)
                     {
                         var temp = JsonConvert.DeserializeObject<Temperature>(response.Data);
                         sensorValue = temp.Fahrenheit + " F";

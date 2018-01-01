@@ -48,7 +48,7 @@ namespace CommandCenter.Xamarain.Droid
                     Name = "pi-cc",
                     Type = "Raspberry Pi 3",
                     Status = "checking status...",
-                    Service = Services.CommandCenterPing,
+                    Service = RemoteServices.CommandCenterPing,
                     Position = 0,
                     IpAddress = "192.168.0.200"
                 };
@@ -60,7 +60,7 @@ namespace CommandCenter.Xamarain.Droid
                     Name = "pi-garage",
                     Type = "Raspberry Pi",
                     Status = "checking status...",
-                    Service = Services.GaragePing,
+                    Service = RemoteServices.GaragePing,
                     Position = 1,
                     IpAddress = "192.168.0.201"
                 };
@@ -72,7 +72,7 @@ namespace CommandCenter.Xamarain.Droid
                     Name = "pi-robot",
                     Type = "Raspberry Pi 3",
                     Status = "checking status...",
-                    Service = Services.RobotPing,
+                    Service = RemoteServices.RobotPing,
                     Position = 2,
                     IpAddress = "192.168.0.202"
                 };
@@ -84,7 +84,7 @@ namespace CommandCenter.Xamarain.Droid
                     Name = "pi-sensor",
                     Type = "Raspberry Pi Zero-W",
                     Status = "checking status...",
-                    Service = Services.SensorPing,
+                    Service = RemoteServices.SensorPing,
                     Position = 3,
                     IpAddress = "192.168.0.203"
                 };
@@ -96,7 +96,7 @@ namespace CommandCenter.Xamarain.Droid
                     Name = "pi-enviro",
                     Type = "Raspberry Pi Zero-W",
                     Status = "checking status...",
-                    Service = Services.EnviroPing,
+                    Service = RemoteServices.EnviroPing,
                     Position = 4,
                     IpAddress = "192.168.0.204"
                 };

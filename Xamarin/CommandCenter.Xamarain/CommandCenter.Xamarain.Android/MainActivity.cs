@@ -1,18 +1,15 @@
-﻿//using Android.Gms.Common;
-//using Firebase.Messaging;
-//using Firebase.Iid;
-using Android.Util;
-using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.Res;
+using Android.Gms.Common;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Util;
 using Android.Views;
-//using Firebase;
+using Firebase;
+using Firebase.Iid;
 
 namespace CommandCenter.Xamarain.Droid
 {
@@ -72,14 +69,14 @@ namespace CommandCenter.Xamarain.Droid
                 }
             }
 
-            //var playAvailable = IsPlayServicesAvailable();
+            var playAvailable = IsPlayServicesAvailable();
 
-            //if (playAvailable)
-            //{
-            //    FirebaseApp.InitializeApp(this);
-            //    Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
-            //    Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
-            //}
+            if (playAvailable)
+            {
+                FirebaseApp.InitializeApp(this);
+                Log.Debug(TAG, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+                Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+            }
         }
 
         public override void OnBackPressed()
@@ -293,30 +290,30 @@ namespace CommandCenter.Xamarain.Droid
             }
         }
 
-        //public bool IsPlayServicesAvailable()
-        //{
-        //    int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+        public bool IsPlayServicesAvailable()
+        {
+            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
 
-        //    if (resultCode != ConnectionResult.Success)
-        //    {
-        //        if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
-        //        {
-        //            System.Diagnostics.Debug.WriteLine(GoogleApiAvailability.Instance.GetErrorString(resultCode));
-        //        }
-        //        else
-        //        {
-        //            System.Diagnostics.Debug.WriteLine("Google Play Services is NOT available.");
-        //        }
+            if (resultCode != ConnectionResult.Success)
+            {
+                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                {
+                    System.Diagnostics.Debug.WriteLine(GoogleApiAvailability.Instance.GetErrorString(resultCode));
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Google Play Services is NOT available.");
+                }
 
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        System.Diagnostics.Debug.WriteLine("Google Play Services is available.");
+                return false;
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Google Play Services is available.");
 
-        //        return true;
-        //    }
-        //}
+                return true;
+            }
+        }
     }
 
     internal class CustomActionBarDrawerToggle : ActionBarDrawerToggle

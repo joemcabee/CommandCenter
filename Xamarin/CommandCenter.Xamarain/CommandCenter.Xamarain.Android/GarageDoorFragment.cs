@@ -34,7 +34,7 @@ namespace CommandCenter.Xamarain.Droid
                 {
                     DoorSide = "Left",
                     Car = "Pilot",
-                    Service = CommandCenter.Xamarain.Services.LeftGarageDoor
+                    Service = RemoteServices.LeftGarageDoor
                 };
 
                 garageDoors.Add(leftDoor);
@@ -43,7 +43,7 @@ namespace CommandCenter.Xamarain.Droid
                 {
                     DoorSide = "Right",
                     Car = "Outlander",
-                    Service = CommandCenter.Xamarain.Services.RightGarageDoor
+                    Service = RemoteServices.RightGarageDoor
                 };
 
                 garageDoors.Add(rightDoor);
