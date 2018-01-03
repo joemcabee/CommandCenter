@@ -100,7 +100,10 @@ public class ApiClient {
 
         StringBuilder sb= new StringBuilder();
         HttpClient client= new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(request.getUrl());
+        HttpGet httpget = new HttpGet(request.toString());
+
+        String basicAuth = RemoteAuth.getBasicAuthValue(context);
+        httpget.addHeader("Authorization", basicAuth);
 
         try {
             HttpResponse response = client.execute(httpget);

@@ -138,11 +138,11 @@ public class EnviroFragment extends Fragment {
 
                         if (nodes[i].getService() == RemoteServices.EnviroTemp)
                         {
-                            sensorValue = jsonResponse.getString("Fahrenheit") + " F";
+                            sensorValue = jsonResponse.getString("fahrenheit") + " F";
                         }
                         else
                         {
-                            int analogValue = jsonResponse.getInt("Photo");
+                            int analogValue = jsonResponse.getInt("photo");
 
                             if (analogValue == 0) {
                                 sensorValue = "100 %";
