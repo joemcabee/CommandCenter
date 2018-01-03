@@ -1,0 +1,14 @@
+﻿extends layout
+
+block content
+  h1 #{title}
+  p View the current status of all home systems.
+  .row
+    .col-md-4
+      h4 pi-robot (Raspberry Pi 3)
+      p.text-muted.statusPiRobot Retrieving status...
+    .col-md-4
+      h4 pi-garage (Raspberry Pi 3)
+      p.text-muted.statusPiGarage Retrieving status...
+block scripts
+    script(src='/javascripts/site/index.js')

@@ -1,0 +1,17 @@
+{
+  "name": "cc_web",
+  "version": "0.0.0",
+  "description": "CC_Web",
+  "main": "app.js",
+  "author": {
+    "name": "joemc"
+  },
+  "dependencies": {
+    "dblite": "^0.7.8",
+    "express": "3.4.4",
+    "jade": "*",
+    "node-fetch": "^1.7.1",
+    "simple-node-logger": "^0.93.28",
+    "stylus": "*"
+  }
+}

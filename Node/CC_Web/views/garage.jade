@@ -1,0 +1,26 @@
+﻿extends layout
+
+block content
+  h1 #{title}
+  .row
+    .col-md-4
+      h4 Left Garage Door
+      p
+        a.btn.btn-default.leftDoor Trigger &raquo;
+    .col-md-4
+      h4 Right Garage Door
+      p
+        a.btn.btn-default.rightDoor Trigger &raquo;
+    .col-md-4
+      h4 Webcam
+      p
+        a.btn.btn-default.webcamPiGarage View &raquo;
+block scripts
+    script(src='/javascripts/site/garage.js')
+    script.
+        leftPin="#{leftPin}";
+        leftAct="#{leftAct}";
+        leftArg="#{leftArg}";
+        rightPin="#{rightPin}";
+        rightAct="#{rightAct}";
+        rightArg="#{rightArg}";

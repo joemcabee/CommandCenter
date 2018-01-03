@@ -1,0 +1,11 @@
+﻿extends layout
+
+block content
+  h1 #{title}
+  .row
+    .col-md-4
+      h4 Webcam
+      p
+        a.btn.btn-default.webcamPiRobot(target="_blank") View &raquo;
+block scripts
+    script(src='/javascripts/site/robot.js')
